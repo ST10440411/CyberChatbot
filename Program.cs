@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Media;
+using System.Security.Cryptography.X509Certificates;
+
 
 namespace CyberChatbot
 {
@@ -47,8 +49,9 @@ namespace CyberChatbot
                     Console.WriteLine("Bot: Stay safe online! Goodbye.");
                     break;
                 }
+                RespondToUser(userInput);
 
-               
+
             }
 
         }
@@ -82,6 +85,45 @@ namespace CyberChatbot
         Stay Safe Online!
         ");
             Console.ResetColor();
+        }
+
+        static void RespondToUser(string input)
+        {
+            if (input.Contains("how are you"))
+            {
+                Console.WriteLine("Bot: I am great thanks for asking!");
+            }
+            else if (input.Contains("what's your purpose"))
+            {
+                Console.WriteLine("Bot: I am here to educate you about cybersecurity threats and how to avoid them.");
+            }
+            else if (input.Contains("what can i ask you about"))
+            {
+                Console.WriteLine("Bot: You can ask me about phishing, password safety, and safe browsing practices.");
+            }
+            else if (input.Contains("password safety"))
+            {
+                Console.WriteLine("Bot: Use strong, unique passwords and enable two-factor authentication.");
+            }
+            else if (input.Contains("phishing"))
+            {
+                Console.WriteLine("Bot: Don't click on suspicious links or provide personal information via email.");
+            }
+            else if (input.Contains("safe browsing"))
+            {
+                Console.WriteLine("Bot: Always verify website URLs and avoid downloading unknown files.");
+            }
+            else
+            {
+                Console.WriteLine("Bot: I didn't quite understand that. Could you rephrase?");
+            }
+
+
+
+
+
+
+
         }
     }
 }
